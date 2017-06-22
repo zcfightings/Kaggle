@@ -31,7 +31,6 @@ all_data[skewed_feats] = np.log1p(all_data[skewed_feats])
 print(all_data.head(10))
 all_data = pd.get_dummies(all_data)
 all_data = all_data.fillna(all_data.mean())
-
 X_train = all_data[:train.shape[0]]
 print(X_train)
 X_test = all_data[train.shape[0]:]
@@ -49,6 +48,7 @@ model_ridge = Ridge()
 alphas = [0.05, 0.1, 0.3, 1, 3, 5, 10, 15, 30, 50, 75]
 cv_ridge = [rmse_cv(Ridge(alpha = alpha)).mean()
             for alpha in alphas]
+
 cv_ridge = pd.Series(cv_ridge, index = alphas)
 cv_ridge.plot(title = "Validation - Just Do It")
 plt.xlabel("alpha")
