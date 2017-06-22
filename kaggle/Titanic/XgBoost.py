@@ -40,7 +40,7 @@ from xgboost import XGBClassifier
 # Configure visualisations
 mpl.style.use('ggplot')
 sns.set_style('white')
-pylab.rcParams['figure.figsize'] = 8, 6
+pylab.rcParams['figure.figsize'] = 8,6
 
 
 def get_combined_data():
